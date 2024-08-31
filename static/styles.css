@@ -1,19 +1,64 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #121212; /* Dark background for Spotify-like feel */
+    color: #e0e0e0; /* Light text color */
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 #music-player {
     margin-top: 50px;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background for the player */
+    border-radius: 8px;
+    display: inline-block;
 }
 
-ul {
+#track-list {
     list-style-type: none;
     padding: 0;
 }
 
 li {
     margin: 10px 0;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: #444;
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: #1db954; /* Spotify green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1ed760;
+}
+
+#now-playing {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+audio {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #333;
+    border: none;
 }

@@ -8,21 +8,34 @@
 </head>
 <body>
     <h1>Welcome to the Music Website</h1>
-
+<!--
     <div id="add-track">
-    <h2>Add a New Track</h2>
-    <form id="track-form">
-        <input type="text" id="title" placeholder="Track Title" required>
-        <input type="text" id="artist" placeholder="Artist Name" required>
-        <button type="submit">Add Track</button>
-    </form>
-</div>
-
-
+        <h2>Add a New Track</h2>
+        <form id="track-form">
+            <input type="text" id="title" placeholder="Track Title" required>
+            <input type="text" id="artist" placeholder="Artist Name" required>
+            <button type="submit">Add Track</button>
+        </form>
+    </div>
+-->
     <div id="music-player">
         <h2>Track List</h2>
         <ul id="track-list"></ul>
+
+        <div id="controls">
+            <button id="prev">Previous</button>
+            <button id="play-pause">Play</button>
+            <button id="next">Next</button>
+        </div>
+
+        <div id="now-playing">
+            <h2>Now Playing</h2>
+            <p id="current-track">No track playing</p>
+        </div>
+
+        <audio id="audio-player" controls></audio>
     </div>
+
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
