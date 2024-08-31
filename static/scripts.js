@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('/api/tracks')
         .then(response => response.json())
         .then(data => {
-            data.forEach(track => {
-                addTrackToPlayer(track);
+            data.forEach((track, index) => {
+                addTrackToPlayer(track, index);
             });
         });
 
@@ -26,30 +26,29 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => response.json())
         .then(track => {
-            addTrackToPlayer(track);
+            addTrackToPlayer(track, data.length);
         });
 
         trackForm.reset();
     });
 
     function addTrackToPlayer(track, index) {
-    const trackElement = document.createElement('div');
-    trackElement.textContent = `${track.title} by ${track.artist}`;
+        const trackElement = document.createElement('div');
+        trackElement.textContent = `${track.title} by ${track.artist}`;
 
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-    deleteButton.addEventListener('click', () => {
-        fetch(`/api/tracks/${index}`, {
-            method: 'DELETE'
-        })
-        .then(response => response.json())
-        .then(() => {
-            trackElement.remove();
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => {
+            fetch(`/api/tracks/${index}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(() => {
+                trackElement.remove();
+            });
         });
-    });
 
-    trackElement.appendChild(deleteButton);
-    player.appendChild(trackElement);
-}
-
+        trackElement.appendChild(deleteButton);
+        player.appendChild(trackElement);
+    }
 });
