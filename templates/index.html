@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Music Website</h1>
+
+    <div id="add-track">
+    <h2>Add a New Track</h2>
+    <form id="track-form">
+        <input type="text" id="title" placeholder="Track Title" required>
+        <input type="text" id="artist" placeholder="Artist Name" required>
+        <button type="submit">Add Track</button>
+    </form>
+</div>
+
+
+    <div id="music-player">
+        <h2>Track List</h2>
+        <ul id="track-list"></ul>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
